@@ -1,0 +1,86 @@
+.section-latest-article {
+    padding-top: 50px;
+    padding-bottom: 60px;
+    @include devices(lg) {
+        padding-top: 38px;
+        padding-bottom: 38px;
+    }
+    &__blog-list {
+        padding-right: 7px;
+        @include devices(lg) {
+            padding-right: 0;
+        }
+    }
+    &__blog-item {
+        height: 100%;
+        border: 1px solid var(--#{$prefix}border-color);
+    }
+    &__blog-item+&__blog-item {
+        margin-top: 40px;
+        @include devices(lg) {
+            margin-top: 20px;
+        }
+    }
+    &__btn {
+        &:hover {
+            background-color: $primary;
+            color: $secondary;
+        }
+    }
+
+    .section-latest-article__blog-list4 {
+        .section-latest-article__blog-item {
+            padding: 0;
+            border: 0;
+            background-color: transparent;
+        }
+    }
+}
+.load-more-item {display: none; }
+
+.section-latest-article2 {
+    --#{$prefix}card-color: var(--#{$prefix}heading-text-color2);
+    --#{$prefix}card-color2: #8FAFBF;
+    --#{$prefix}card-color2-rgb: #{toRGB(#8FAFBF)};
+    --#{$prefix}card-font-family: #{$headings-font-family};
+    --#{$prefix}card-font-size: #{$h6-font-size};
+    .card-latest__commentswrap {
+        border-top-color: var(--#{$prefix}card-color2-rgb, 1);
+        padding-top: 12px;
+    }
+    .card-latest__view-article,
+    .card-latest__comments {
+        color: var(--#{$prefix}card-color2);
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+// .section-latest-article3 {
+    
+// }
+
+// .section-latest-article7 {
+//     .card-latest {
+//         &__image {
+//             margin-bottom: 14px;
+//         }
+//         &__tagname {
+//             padding: 0;
+//             padding-left: 16px;
+//             &::before {
+//                 left: 0;
+//                 border-color: $primary;
+//             }
+//             a {
+//                 padding: 0;
+//             }
+//             &:hover {
+//                 &::before {
+//                     background-color: var(--#{$prefix}primary);
+//                 }
+//             }
+//         }
+//     }
+// }

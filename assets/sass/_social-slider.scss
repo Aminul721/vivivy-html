@@ -1,0 +1,21 @@
+.section-social {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    @include devices(lg) {
+        padding-top: 38px;
+        padding-bottom: 38px;
+    }
+    &__slider-item {
+        @include devices(xl) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+.social-dark { display: none; }
+[data-bs-theme="dark"] {
+    .social-light { display: none; }
+    .social-dark {
+        display: block;
+    }
+}

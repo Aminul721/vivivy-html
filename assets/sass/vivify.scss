@@ -1,0 +1,42 @@
+@import "custom";
+
+// bootstrap css 
+@import "../scss/bootstrap";
+
+// variables
+@import "utility/mixins";
+@import "utility/common";
+@import "utility/button";
+@import "variables/var";
+@import "common";
+@import "ads";
+@import "global-form";
+@import "card-blog";
+
+@import "top-bar";
+@import "popup-search";
+@import "popup-sidebar";
+@import "navigation";
+@import "mobile-menu";
+@import "breadcrumb";
+@import "hero";
+@import "feature-article";
+@import "editor-choice";
+@import "subscribe";
+@import "latest-article";
+@import "sidebar";
+@import "instagram";
+@import "social-slider";
+@import "our-category";
+@import "author-card";
+@import "author";
+@import "about";
+@import "contact";
+@import "article";
+@import "tblof-contnt";
+@import "landing";
+
+
+@import "footer";
+
+

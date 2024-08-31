@@ -1,0 +1,22 @@
+html { direction: rtl; }
+.section-price-table .slide {
+    right: initial;
+    left: calc(calc(100% - 150px));
+}
+.vivity-btn > svg {
+    transform: scaleX(-1) rotate(-45deg);
+}
+.vivity-btn:hover > svg {
+    transform: scaleX(-1);
+}
+.inner-page-hero__breadcrumb li i {
+    transform: scaleX(-1);
+}
+
+
+.owl-carousel .owl-nav button.owl-prev {
+    transform: scaleX(-1);
+}
+.owl-carousel .owl-nav button.owl-next {
+    transform: scaleX(-1);
+}

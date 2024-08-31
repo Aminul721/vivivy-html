@@ -1,0 +1,77 @@
+.global-form {
+    $input-padding-y: 5px;
+    $input-padding-x: 30px;
+    $input-font-family: $headings-font-family;
+    $input-font-size: $h6-font-size;
+    $input-font-weight: 500;
+    $input-line-height: 1;
+
+    $input-padding-x-lg: 12px;
+
+    $input-bg: transparent;
+
+    $input-color: #797E80;
+    $input-border-color: #D9D2D4;
+    $input-border-width: 1px;
+    $input-box-shadow: initial;
+    $input-border-radius: 8px !important;
+
+    $input-focus-bg: initial;
+    $input-focus-border-color: initial;
+    $input-focus-color: initial;
+    $input-focus-box-shadow: initial;
+
+    $input-placeholder-color: $input-color;
+    $input-plaintext-color: var(--#{$prefix}body-color);
+    $input-height: 44px;
+
+    .form-control {
+        font-size: $input-font-size;
+        line-height: $input-line-height;
+        font-family: $input-font-family;
+        font-weight: $input-font-weight;
+        border: 1px solid  $input-border-color;
+        border-radius: $input-border-radius;
+        height: $input-height;
+        color: $input-color;
+        &:is(:active, :focus) {
+            background-color: $input-bg;
+            box-shadow: $input-box-shadow;
+        }
+    }
+    textarea.form-control {
+        resize: none;
+        height: 200px;
+    }
+    .form-check-input {
+        width: 18px;
+        height: 18px;
+        border: 1px solid  #797E80;
+        background-color: transparent;
+        border-radius: 4px;
+        margin-top: -1px;
+        &:is(:active, :focus) {
+            box-shadow: $input-box-shadow;
+            filter: brightness(100%);
+        }
+        &:checked[type=checkbox] {
+            background-color: $primary;
+            border-color: $primary;
+        }
+    }
+    .form-check-label {
+        font-family: $input-font-family;
+        line-height: 16px;
+        display: block;
+        margin-left: 10px;
+        a {
+            color: $primary;
+            text-decoration: underline;
+        }
+    }
+}
+[data-bs-theme="dark"] {
+    .global-form {
+        $input-plaintext-color: rgba(var(--#{$prefix}body-color-rgb), 0.5);
+    }
+}

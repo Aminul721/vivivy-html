@@ -1,0 +1,25 @@
+.card{
+    transition: $transition-base;
+    &:hover,
+    &:focus{
+        box-shadow: $box-shadow;
+    }
+}
+.card-post{   
+    --bs-card-spacer-y: 30px;   
+    --bs-card-spacer-x: 30px;   
+    padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x); 
+    .card-body{
+        --bs-card-spacer-x: 0; 
+    }
+    .card-footer{
+        padding-bottom: 0;
+    }
+}
+
+[data-bs-theme="dark"]{
+    .card{
+        --bs-card-bg: #000;
+        --bs-card-border-color: rgba(var(--bs-white-rgb), .1);
+    }
+}

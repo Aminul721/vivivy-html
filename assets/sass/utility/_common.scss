@@ -1,0 +1,9 @@
+@mixin boxShadow() {
+    box-shadow: -4px -4px 10px 0px rgba(var(--#{$prefix}black-rgb), 0.25);
+}
+@mixin boxShadow2() {
+    box-shadow: 0px 4px 10px 0px rgba(var(--#{$prefix}black-rgb), 0.26);
+}
+@mixin boxShadow3() {
+    box-shadow: 0px 1px 10px 0px rgba(var(--#{$prefix}black-rgb), 0.1);
+}

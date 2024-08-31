@@ -1,0 +1,73 @@
+@mixin devices ($breakpoint) {
+	@if $breakpoint==xxl {
+		@media (max-width: 1400px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint==lp {
+		@media (max-width: 1300px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint==xl {
+		@media (max-width: 1200px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint==lg {
+		@media (max-width: 991px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint==md {
+		@media (max-width: 767px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint==sm {
+		@media (max-width: 520px) {
+			@content;
+		}
+	}
+}
+
+@mixin reset-btn {
+	border: none;
+	outline: none;
+	background-color: transparent;
+}
+
+@mixin borderHover {
+	background: linear-gradient(to right, currentcolor 0%, currentcolor 100%) 0px 95%/0px 1px no-repeat;
+	transition: all 500ms ease;
+	&:hover {
+		background-size: 100% 1px;
+	}
+}
+
+@function toRGB ($color) {
+	@return red($color)+", "+green($color)+", "+blue($color);
+}
+
+@mixin backgroundGradient() {
+	background: linear-gradient(180deg, rgba($black, 0) 0%, $black 100%);
+}
+@mixin backgroundColor() {
+	background-color: rgba($black, 0.2);
+}
+@mixin backgroundColor2() {
+	background-color: rgba($black, 0.5);
+}
+
+@mixin svgIcon() {
+	svg {
+		width: 1em;
+		height: 1em;
+		fill: currentColor;
+	}
+}

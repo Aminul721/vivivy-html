@@ -1,0 +1,112 @@
+.top-bar {
+    padding-top: 45px;
+    padding-bottom: 45px;
+    transition: opacity 0.5s ease, visibility 0.5s ease, height 0.5s ease;
+    @include devices(lg){
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .section-header__logo {
+        width: 274px;
+        margin-right: 0;
+        @include devices(xl){
+            width: 200px;
+        }
+        @include devices(lg){
+            width: 188px;
+        }
+        @include devices(md){
+            width: 170px;
+        }
+    }
+
+    .section-header__right {
+        padding-right: 20px;
+        &__searchicon {
+            color: $headings-color;
+        }
+        &__themebg {
+            background-color: $headings-color;
+        }
+        &__theme-icon {
+            color: var(--#{$prefix}body-color2);
+            &.light-icon {
+            background-color: var(--#{$prefix}body-color2);
+            color: $headings-color;
+            }
+        }
+    }
+    .section-header__rightwrap {
+        border-radius: 0;
+        padding: 0;
+    }
+    .section-header__dskmenu {
+        &__bar {
+            background-color: $headings-color;
+            &:nth-child(3) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
+.common-social {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 20px;
+    li {
+        font-size: $font-size-base;
+        line-height: 1;
+        color: $headings-color;
+        &:hover {
+            color: var(--#{$prefix}body-color2);
+            a {
+                background-color: $headings-color;
+                border-color: $headings-color;
+            }
+        }
+        a {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $headings-color;
+            border-radius: 4px;
+        }
+    }
+}
+
+[data-bs-theme="dark"] {
+    .top-bar {
+        .section-header__right {
+            &__theme-icon {
+                &.light-icon {
+                background-color: transparent;
+                color: var(--#{$prefix}body-color2);
+                }
+                &.dark-icon {
+                background-color: var(--#{$prefix}body-color2);
+                color: $headings-color;
+                }
+            }
+        }
+    }
+    .common-social {
+        li {
+            color: var(--#{$prefix}white-color);
+            a {
+                border-color: var(--#{$prefix}white-color);
+            }
+            &:hover {
+                a {
+                    background-color: $primary;
+                    border-color: $primary;
+                }
+            }
+        }
+    }
+}

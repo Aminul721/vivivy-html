@@ -1,0 +1,31 @@
+.sidebar-offcanvas {
+    --#{$prefix}offcanvas-width: 413px;
+    --#{$prefix}offcanvas-padding-x: 40px;
+    --#{$prefix}offcanvas-padding-y: 50px;
+    &.offcanvas-start,
+    &.offcanvas-end {
+        border: 0;
+    }
+    z-index: 1051;
+    @include boxShadow2;
+
+    .btn-close {
+        width: 24px;
+        height: 24px;
+        top: 30px;
+        right: 50px;
+        background-image: none;
+    }
+    &__item + &__item {
+        margin-top: 20px;
+    }
+    .sidebar {
+        padding: 0;
+        &__widget {
+            border: 0;
+        }
+        &__title {
+            &::after { content: none; }
+        }
+    }
+}

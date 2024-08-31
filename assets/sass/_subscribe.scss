@@ -1,0 +1,114 @@
+.section-subscribe {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    @include devices(lg) {
+        padding-top: 38px;
+        padding-bottom: 38px;
+    }
+    .section-title-wrap {
+        padding-bottom: 40px;
+        &__col {
+            width: 100%;
+            p {
+                text-align: center;
+                font-family: $headings-font-family;
+                font-size: $font-size-base;
+                line-height: 1.1rem;
+                font-weight: 500;
+                margin-bottom: 0;
+            }
+        }
+        &__title {
+            text-align: center;
+            margin-bottom: 14px;
+            &::after {
+                content: none;
+            }
+            & > span {
+                background-color: transparent;
+            }
+        }
+    }
+    .section-title-wrap2 {
+        padding-bottom: 30px;
+        .section-title-wrap__title {
+            text-align: left;
+            margin-bottom: 0;
+        }
+        .section-title-wrap__col p {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+    }
+    &__bg {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+    }
+    &__wrap {
+        max-width: 712px;
+        margin: 0 auto;
+    }
+    &__form {
+        --#{$prefix}subscribe-padding-x: 30px;
+        --#{$prefix}subscribe-padding-x-lg: 12px;
+        --#{$prefix}input-height: 48px;
+        --#{$prefix}input-color: #797E80;
+        --#{$prefix}input-bg: var(--#{$prefix}secondary);
+        .form-control {
+            padding-left: var(--#{$prefix}subscribe-padding-x);
+            height: var(--#{$prefix}input-height);
+            background-color: var(--#{$prefix}input-bg);
+            font-size: $font-size-base;
+            border-color: var(--#{$prefix}input-color);
+            padding-right: 150px;
+            @include devices(lg) {
+                padding-left: var(--#{$prefix}subscribe-padding-x-lg);
+            }
+            &:is(:active, :focus) {
+                background-color: var(--#{$prefix}input-bg);
+                box-shadow: $input-box-shadow;
+            }
+        }
+    }
+    &__btn {
+        border-radius: 0 8px 8px 0 !important;
+    }
+}
+
+.section-subscribe-footer {
+    padding-top: 20px;
+    padding-bottom: 60px;
+    @include devices(lg) {
+        padding-top: 38px;
+        padding-bottom: 38px;
+    }
+}
+
+.subscribe-dark {
+    display: none;
+}
+[data-bs-theme="dark"] {
+    .subscribe-light {
+        display: none;
+    }
+    .subscribe-dark {
+        display: block;
+    }
+    .section-subscribe {
+        .form-check-label {
+            color: rgba(var(--#{$prefix}body-color-rgb), 0.5);
+        }
+        .form-control {
+            color: rgba(var(--#{$prefix}body-color-rgb), 0.5);
+            border-color: rgba(var(--#{$prefix}body-color-rgb), 0.5);
+        }
+
+        &__btn {
+            color: var(--#{$prefix}body-color);
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+}

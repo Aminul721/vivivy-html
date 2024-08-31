@@ -1,0 +1,8 @@
+.btn-primary{
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: var(--bs-primary);
+    --bs-btn-hover-bg: rgba(255, 255, 255, .1);
+}
+.btn-outline-primary{
+    --bs-btn-hover-color: #fff;
+}

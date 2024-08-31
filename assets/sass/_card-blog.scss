@@ -1,0 +1,566 @@
+.card-body {
+    --#{$prefix}card-color: var(--#{$prefix}heading-text-color2);
+    --#{$prefix}card-color2: #8FAFBF;
+    --#{$prefix}card-font-size: 12px;
+    --#{$prefix}card-font-family: #{$headings-font-family};
+    --#{$prefix}card-cap-padding-y: 4px;
+    --#{$prefix}card-cap-padding-x: 22px;
+    --#{$prefix}card-cap-padding-x2: 12px;
+    --#{$prefix}card-author-mx-width: 210px;
+
+    width: 100%;
+    max-width: 780px;
+    padding-left: 15px;
+    padding-right: 15px;
+    &__tag {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    &__tagname {
+        font-family: var(--#{$prefix}card-font-family);
+        font-size: var(--#{$prefix}card-font-size);
+        line-height: 1rem;
+        display: block;
+        width: fit-content;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            top: 0;
+            left: 12px;
+            bottom: 0;
+            margin: auto 0;
+            border: 1px solid var(--#{$prefix}card-color);
+            border-radius: 50%;
+            transition: all 0.5s ease;
+        }
+        a {
+            padding: var(--#{$prefix}card-cap-padding-y) var(--#{$prefix}card-cap-padding-x);
+            padding-right: var(--#{$prefix}card-cap-padding-x2);
+            display: block;
+        }
+        &:hover {
+            &::before {
+                background-color: var(--#{$prefix}card-color);
+            }
+        }
+    }
+    &__title {
+        a {
+            @include borderHover;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+    &__author {
+        max-width: fit-content;
+        flex-wrap: nowrap;
+        &__wrap {
+            width: calc(calc(100% - 24px) /1);
+        }
+        &__img {
+            width: 44px;
+            min-width: 44px;
+            height: 44px;
+            min-height: 44px;
+            img {
+                width: 100% !important;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &__name {
+            width: calc(calc(100% - 44px) / 1);
+        }
+        &__title {
+            color: var(--#{$prefix}card-color2);
+            line-height: 1.3rem;
+            a {
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+        &__date {
+            font-family: var(--#{$prefix}card-font-family);
+            font-size: var(--#{$prefix}card-font-size);
+            line-height: 1rem;
+            color: var(--#{$prefix}card-color2);
+            display: block;
+        }
+        &__bookmark {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            border: 1px solid var(--#{$prefix}card-color2);
+            color: var(--#{$prefix}card-color2);
+            font-size: var(--#{$prefix}card-font-size);
+            margin-left: 16px;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            &.marked,
+            &:hover {
+                border-color: $primary;
+                background-color: $primary;
+                color: var(--#{$prefix}body-color2);
+            }
+        }
+    }
+}
+.card-body-style2 {
+    max-width: 796px;
+    padding: 0;
+    .card-body__tagname {
+        margin: 0 auto;
+    }
+    .card-body__title {
+        text-align: center;
+    }
+    .card-body__author {
+        margin: 0 auto;
+    }
+}
+.card-body-style4 {
+    max-width: 655px;
+    .card-body__author,
+    .card-body__tagname {
+        margin: 0; 
+    }
+    .card-body__title {
+        text-align: left;
+    }
+}
+.card-body2 {
+    background-color: $secondary;
+    .card-body__tagname {
+        padding-left: 11px;
+        &::before {
+            left: 0;
+            border: 1px solid var(--#{$prefix}primary);
+        }
+        a {
+            padding: 0;
+            display: block;
+        }
+        &:hover {
+            &::before {
+                background-color: var(--#{$prefix}primary);
+            }
+        }
+    }
+    .card-body__author__title {
+        color: $body-color;
+    }
+    .card-body__author__date {
+        color: rgba($body-color, 0.5);
+        &--time {
+            position: relative;
+            padding-left: 14px;
+            @include devices(xl) {
+                padding-left: 10px;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                margin: auto 0;
+                display: flex;
+                align-items: center;
+                background-color: rgba($body-color, 0.5);
+            }
+        }
+    }
+    .card-body__author {
+        width: 90px;
+        max-width: initial;
+        img {
+            width: 100% !important;
+        }
+    }
+    .card-body__info {
+        width: calc(calc(100% - 90px) / 1);
+    }
+    .card-body__author__bookmark {
+        top: 10px;
+        left: 10px;
+        z-index: 1;
+        color: var(--#{$prefix}heading-text-color2);
+        @include backgroundColor;
+        backdrop-filter: blur(4px);
+        border: 1px solid transparent;
+        margin-left: 0;
+        &.marked,
+        &:hover {
+            background-color: $primary;
+            color: var(--#{$prefix}body-color2);
+        }
+    }
+}
+.card-body3 {
+    max-width: 700px;
+    padding: 0;
+    .card-body__title {
+        & > a{
+            @include borderHover;
+        }
+    }
+}
+.card-body4 {
+    --#{$prefix}card-color2-rgb: #{toRGB(#8FAFBF)};
+    background-color: transparent;
+    max-width: 100%;
+    .card-body__author__date {
+        color: rgba(var(--#{$prefix}card-color2-rgb, 0.3));
+    }
+}
+.card-color {
+    .card-body__author__title {
+        color: var(--#{$prefix}heading-text-color2);
+    }
+}
+
+.card-latest {
+    --#{$prefix}card-color: var(--#{$prefix}heading-text-color2);
+    --#{$prefix}card-color2: #8FAFBF;
+    --#{$prefix}card-font-size: 12px;
+    --#{$prefix}card-font-family: #{$headings-font-family};
+    --#{$prefix}card-cap-padding-y: 4px;
+    --#{$prefix}card-cap-padding-x: 22px;
+    --#{$prefix}card-cap-padding-x2: 12px;
+    --#{$prefix}card-author-mx-width: 210px;
+    --#{$prefix}card-border-width: 0;
+    --#{$prefix}card-border-color: transparent;
+    --#{$prefix}card-border-radius: 0;
+    --#{$prefix}card-inner-border-radius: 0;
+    --#{$prefix}card-cap-bg: transparent;
+    --#{$prefix}card-bg: transparent;
+    
+    width: 100%;
+    &:hover {
+        .card-latest__image {
+            img {
+                transform: scale(1.03);
+            }
+        }
+    }
+    &__image {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 10px;
+        
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100% !important;
+            border-radius: 4px !important;
+            transition: all 0.5s ease;
+        }
+    }
+    &__infowrap {
+        padding-left: 70px;
+        padding-right: 70px;
+        @include devices(lg) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    &__tag {
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    &__tagname {
+        font-family: var(--#{$prefix}card-font-family);
+        font-size: var(--#{$prefix}card-font-size);
+        line-height: 1rem;
+        display: block;
+        width: fit-content;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            top: 1px;
+            left: 12px;
+            bottom: 0;
+            margin: auto 0;
+            border: 1px solid var(--#{$prefix}card-color);
+            border-radius: 50%;
+            transition: all 0.5s ease;
+        }
+        a {
+            padding: var(--#{$prefix}card-cap-padding-y) var(--#{$prefix}card-cap-padding-x);
+            padding-right: var(--#{$prefix}card-cap-padding-x2);
+            display: block;
+        }
+        &:hover {
+            &::before {
+                background-color: var(--#{$prefix}card-color);
+            }
+        }
+    }
+    &__title {
+        margin-bottom: 14px;
+        line-height: 1.2;
+        & > a {
+            @include borderHover;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+    &__meta {
+        margin-bottom: 16px;
+        gap: 8px;
+        li {
+            font-family: $headings-font-family;
+            font-weight: 500;
+            position: relative;
+            a {
+                font-weight: 700;
+                &:hover {
+                    color: $primary;
+                }
+            }
+            &+li {
+                padding-left: 14px;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    z-index: 1;
+                    background-color: rgba($body-color, 0.7);
+                }
+            }
+        }
+    }
+    &__commentswrap {
+        border-top: 1px solid var(--#{$prefix}border-color);
+        padding-top: 20px;
+    }
+    &__comments {
+        font-family: $headings-font-family;
+        &:hover {
+            color: $primary;
+        }
+    }
+    &__view-article {
+        transition: all 0.3s ease;
+        &:hover {
+            color: $primary;
+        }
+    }
+    &__comment-icon {
+        font-size: 14px;
+        margin-right: 6px;
+        position: relative;
+        top: 2px;
+    }
+    &__arrow-up {
+        font-size: 10px;
+        margin-left: 6px;
+    }
+}
+
+.card-latest2 {
+    .card-latest__infowrap {
+        padding-left: 40px;
+        padding-right: 0px;
+        width: calc(calc(52% - 0px) / 1);
+        @include devices(xl) {
+            padding-left: 20px;
+        }
+        @include devices(lg) {
+            width: 100%;
+            padding-left: 0;
+            padding-top: 16px;
+        }
+    }
+    .card-latest__image {
+        width: calc(calc(48% - 0px) / 1);
+        @include devices(lg) {
+            width: 100%;
+        }
+    }
+    .card-latest__tag { margin-bottom: 10px; }
+    .card-latest__title { margin-bottom: 10px; }
+    .card-latest__meta { margin-bottom: 14px; }
+    .card-latest__commentswrap { padding-top: 14px; }
+}
+
+.card-latest3 {
+    .card-latest__infowrap {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        @include devices(lg) {
+            padding-left: 0;
+            padding-top: 12px;
+        }
+    }
+    .card-latest__tagname {
+        padding-left: 22px;
+        &::before {
+            left: 10px;
+        }
+        a {
+            padding: 0;
+        }
+        &:hover {
+            &::before {
+                background-color: var(--#{$prefix}primary);
+            }
+        }
+    }
+}
+.card-latest4 {
+    .card-latest__commentswrap {
+        padding-top: 14px;
+        margin-top: 14px;
+    }
+    .card-latest__tagname {
+        padding: 0;
+        padding-left: 22px;
+        &::before {
+            border-color: $primary;
+        }
+    }
+}
+.card-latest5 {
+    .card-latest__image {
+        margin-bottom: 14px;
+    }
+    .card-latest__tagname {
+        padding: 0;
+        padding-left: 16px;
+        color: $primary;
+        &::before {
+            left: 0;
+            border-color: $primary;
+        }
+        a {
+            padding: 0;
+        }
+        &:hover {
+            &::before {
+                background-color: var(--#{$prefix}primary);
+            }
+        }
+    }
+}
+.card-category {
+    .card-latest__infowrap {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        @include devices(lg) {
+            padding-top: 0;
+        }
+    }
+    .card-latest__image {
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        img {
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+    }
+    &__content-wrap {
+        padding: 0 30px 30px 30px;
+    }
+}
+.card-single {
+    .card-latest__infowrap {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        @include devices(lg) {
+            padding-top: 0;
+        }
+    }
+}
+[data-bs-theme="dark"] {
+    .card-latest {
+        &__commentswrap { border-top-color: rgba(var(--#{$prefix}body-color-rgb), 0.5); }
+        &__tagname {
+            color: var(--#{$prefix}body-color);
+            &.dark-style {
+                color: $primary;
+            }
+        }
+        &__meta {
+            li {
+                color: rgba(var(--#{$prefix}body-color-rgb), 0.5);
+                & + li::before {
+                    background-color: rgba(var(--#{$prefix}body-color-rgb), 0.5);
+                }
+            }
+        }
+        &__view-article,
+        &__comments {
+            color: rgba(var(--#{$prefix}body-color-rgb), 0.5);
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+    .card-body {
+        &__title,
+        &__tagname {
+            color: var(--#{$prefix}body-color);
+            &.dark-style {
+                color: $primary;
+            }
+        }
+    }
+    .card-body2 {
+        background-color: var(--#{$prefix}secondary2);
+        .card-body__author {
+            &__title {
+                color: var(--#{$prefix}body-color);
+            }
+            &__date {
+                color: rgba(var(--#{$prefix}body-color-rgb), 0.5);
+            }
+            &__date {
+                &--time {
+                    &::before {
+                        background-color: rgba(var(--#{$prefix}body-color-rgb), 0.5);
+                    }
+                }
+            }
+        }
+    }
+    .card-body4 {
+        background-color: transparent;
+    }
+    .section-editor-blogs {
+        .card-body2 {
+            .card-body__author {
+                &__title {
+                    color: var(--#{$prefix}body-color);
+                }
+            }
+        }
+    }
+}

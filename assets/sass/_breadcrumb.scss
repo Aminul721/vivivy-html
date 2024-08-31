@@ -1,0 +1,55 @@
+.breadcrumb-menu {
+    .breadcrumb-item {
+        font-family: $headings-font-family;
+        font-weight: 700;
+        color: $headings-color;
+        &.active {
+            font-weight: 500;
+            color: rgba($headings-color, 0.6);
+        }
+        & + .breadcrumb-item {
+            &::before {
+                font-family:"Font Awesome 6 Pro";
+                content: "\f105";
+                font-weight: 700;
+                color: $headings-color;
+            }
+        }
+    }
+}
+.breadcrumb-menu2 {
+    padding-bottom: 20px;
+    .breadcrumb-item {
+        color: var(--#{$prefix}white-color);
+        &.active {
+            color: rgba(var(--#{$prefix}white-color-rgb), 0.7);
+        }
+        & + .breadcrumb-item {
+            &::before {
+                color: var(--#{$prefix}white-color);
+            }
+        }
+    }
+}
+.breadcrumb-menu3 {
+    top: 100px;
+    @include devices(lg){
+        top: 70px;
+    }
+}
+
+[data-bs-theme="dark"] {
+    .breadcrumb-menu {
+        .breadcrumb-item {
+            color: var(--#{$prefix}body-color);
+            &.active {
+                color: rgba(var(--#{$prefix}body-color-rgb), 0.8);
+            }
+            & + .breadcrumb-item {
+                &::before {
+                    color: var(--#{$prefix}body-color);
+                }
+            }
+        }
+    }
+}

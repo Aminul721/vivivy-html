@@ -1,0 +1,272 @@
+.section-header {
+    &--landing {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        .section-header__row {
+            background-color: transparent;
+            backdrop-filter: none;
+        }
+        .navbar-brand {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            @include devices(lg){
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+        .navbar {
+            --#{$prefix}navbar-padding-y: 0;
+            --#{$prefix}navbar-color: #FCF9F7;
+            --#{$prefix}navbar-hover-color: #{$navbar-light-hover-color};
+            --#{$prefix}navbar-active-color: #{$navbar-light-active-color};
+        }
+        .mobileMenu {
+            li {
+                color: var(--#{$prefix}body-color2);
+                font-weight: 700;
+                & + li {
+                    padding-left: 40px;
+                }
+                a {
+                    padding-bottom: 0;
+                    @include borderHover;
+                }
+            }
+        }
+
+        &.header-sticky {
+            background-color: $primary;
+            @include boxShadow2;
+        }
+
+        .navbar-toggler-icon {
+            background-size: 125%;
+            filter: invert(0) opacity(1) brightness(50);
+        }
+    }
+}
+.btn-purchase {
+    background-color: var(--#{$prefix}body-color2);
+    text-transform: uppercase;
+    color: $primary;
+    padding-left: 28px;
+    padding-right: 28px;
+    letter-spacing: 1px;
+    &:hover {
+        border-color: var(--#{$prefix}body-color2);
+        background-color: $primary;
+        color: var(--#{$prefix}body-color2);
+    }
+}
+.offcanvas.offcanvas-top {
+    height: 100vh;
+    &.landig-offcanvas {
+        top: 0;
+        padding-top: 50px;
+        padding-bottom: 0;
+        background-color: $primary;
+        z-index: 9999;
+        .offcanvas-header {
+            margin-bottom: 38px;
+        }
+
+        .custom-navbar-nav {
+            li {
+                font-weight: 700;
+                font-family: $headings-font-family;
+                color: var(--#{$prefix}body-color2);
+            }
+        }
+        .btn-close {
+            color: var(--#{$prefix}body-color2);
+            filter: invert(1) opacity(1);
+            opacity: 1;
+        }
+    }
+}
+
+.landig-hero {
+    background-image: url('../images/backgrounds/landing-bg1.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    padding-top: 186px;
+    padding-bottom: 0;
+    margin-bottom: 80px;
+    @include devices(lg){
+        margin-bottom: 40px;
+        padding-top: 126px;
+    }
+
+    &__inner {
+        margin: 0 auto;
+    }
+    &__title {
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px var(--#{$prefix}body-color2);
+        font-size: 110px;
+        line-height: 138px;
+        @include devices(lg) {
+            font-size: 75px;
+            line-height: 92px;
+        }
+        @include devices(md) {
+            font-size: 60px;
+            line-height: 74px;
+        }
+    }
+    &__subtitle {
+        color: var(--#{$prefix}body-color2);
+        font-size: 60px;
+        line-height: 75px;
+        @include devices(lg){
+            font-size: 40px;
+            line-height: 48px;
+        }
+        @include devices(md){
+            font-size: 32px;
+            line-height: 38px;
+        }
+    }
+    &__text {
+        color: var(--#{$prefix}body-color2);
+        font-size: 25px;
+        line-height: 37px;
+        @include devices(lg){
+            font-size: 20px;
+            line-height: 32px;
+        }
+    }
+}
+
+// home-demos
+.home-demos {
+    overflow: hidden;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    @include devices(lg){
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    &__subtitle {
+        font-size: 18px;
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $primary;
+        @include devices(lg){
+            font-size: 22px;
+            line-height: 30px;
+        }
+    }
+    &__title {
+        font-size: 60px;
+        line-height: 75px;
+        @include devices(lg){
+            font-size: 50px;
+            line-height: 55px;
+        }
+    }
+    &__text {
+        font-size: 25px;
+        line-height: 37px;
+        max-width: 800px;
+        margin: 0 auto;
+        @include devices(lg){
+            font-size: 20px;
+            line-height: 32px;
+        }
+    }
+    &__items {
+        border: 1px solid var(--#{$prefix}border-color);
+        border-radius: 11px;
+        overflow: hidden;
+        background-color: $black;
+        margin-bottom: 16px;
+        img {
+            transition: all 0.5s ease;
+            width: 100% !important;
+        }
+        &:hover {
+            img {
+                opacity: 0.5;
+            }
+            .home-demos__link {
+                transform: scale(1);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    &__link {
+        // @include backgroundColor2;
+        color: var(--#{$prefix}body-color2);
+        // backdrop-filter: blur(3px);
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0.3);
+        transition: all 0.5s ease;
+        border-radius: 10px;
+    }
+    &__titlename {
+        transition: all 0.5s ease;
+        &:hover {
+            a {
+                color: $primary;
+            }
+        }
+    }
+}
+
+// feature
+.feature {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    overflow: hidden;
+    @include devices(lg){
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    &__items {
+        height: 100%;
+        transition: all 0.5s ease;
+        &:hover {
+            .feature__bg {
+                box-shadow: 0px 2px 30px 0px rgba(66, 29, 34, 0.2);
+            }
+        }
+    }
+    &__bg {
+        box-shadow: 0px 2px 30px 0px rgba(66, 29, 34, 0.05);
+        padding: 39px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        transition: all 0.5s ease;
+    }
+}
+
+// creat-website
+.create-website {
+    padding-top: 80px;
+    @include devices(lg){
+        padding-top: 40px;
+    }
+    &__bg {
+        background-image: url('../images/backgrounds/landing-bg2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        padding-top: 172px;
+        padding-bottom: 172px;
+        @include devices(lg){
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+    }
+    .home-demos__title {
+        color: var(--#{$prefix}body-color2);
+    }
+}

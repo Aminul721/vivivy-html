@@ -1,0 +1,36 @@
+:root,
+[data-bs-theme="light"] {
+	--#{$prefix}body-color2: #FCF9F7;
+	--#{$prefix}body-color2-rgb: #{toRGB(#FCF9F7)};
+	--#{$prefix}heading-text-color2: #F2FBFF;
+	--#{$prefix}heading-text-color2-rgb: #{toRGB(#F2FBFF)};
+
+	--#{$prefix}white-color: #F2FBFF;
+	--#{$prefix}white-color-rgb: #{toRGB(#F2FBFF)};
+
+	// border color
+	--#{$prefix}border-color:#E5DCDE;
+	--#{$prefix}border-color-rgb: #{toRGB(#E5DCDE)};
+}
+
+[data-bs-theme="dark"] {
+	--#{$prefix}body-bg: #2f4550;
+	--#{$prefix}body-bg-rgb: #{toRGB(#2f4550)};
+	--#{$prefix}secondary: #314A57;
+	--#{$prefix}secondary-rgb: #{toRGB(#314A57)};
+	--#{$prefix}secondary2: #325161;
+	--#{$prefix}secondary2-rgb: #{toRGB(#325161)};
+	--#{$prefix}white: #314A57;
+	--#{$prefix}white-rgb: #{toRGB(#314A57)};
+
+	--#{$prefix}border-color:#325161;
+	--#{$prefix}border-color-rgb: #{toRGB(#325161)};
+	body {
+		--#{$prefix}body-color: #F2FBFF;
+		--#{$prefix}body-color-rgb: #{toRGB(#F2FBFF)};
+		background-color: var(--#{$prefix}body-bg);
+	}
+	p {
+		color: rgba(var(--#{$prefix}body-color-rgb), 0.88);
+	}
+}

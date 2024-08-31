@@ -1,0 +1,90 @@
+.tblof-contnt {
+    --#{$prefix}toc-p-x: 50px;
+    --#{$prefix}toc-p-y: 22px;
+    background-color: var(--#{$prefix}body-bg);
+    cursor: pointer;
+    &__title {
+        position: relative;
+        padding: var(--#{$prefix}toc-p-y) var(--#{$prefix}toc-p-x);
+        padding-right: calc(var(--#{$prefix}toc-p-x) + 20px);
+        &::after {
+            font-family:var(--fa-style-family,"Font Awesome 6 Pro");
+            content: '\f107';
+            position: absolute;
+            width: auto;
+            height: auto;
+            top: 0;
+            right: var(--#{$prefix}toc-p-x);
+            bottom: 0;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            line-height: 1;
+            color: $headings-color;
+        }
+    }
+    &__list {
+        display: none;
+    }
+    .toc-list {
+        border-top: 1px solid var(--#{$prefix}border-color);
+        list-style: none;
+        margin-bottom: 0;
+        padding: 10px 15px 15px 40px;
+        li {
+            font-family: $headings-font-family;
+            a {
+                position: relative;
+                padding-left: 16px;
+                &::before {
+                    content: '';
+                    width: 6px;
+                    height: 6px;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto 0;
+                    border-radius: 50%;
+                    background-color: $body-color;
+                    z-index: 1;
+                }
+            }
+            & + li {
+                margin-top: 16px;
+            }
+            &.li-h3 {
+                padding-left: 16px;
+            }
+            &.li-h4 {
+                padding-left: 32px;
+            }
+            &.li-h5 {
+                padding-left: 48px;
+            }
+            &.li-h6 {
+                padding-left: 64px;
+            }
+        }
+    }
+}
+
+[data-bs-theme="dark"] {
+    .tblof-contnt {
+        &__title {
+            &::after {
+                color: var(--#{$prefix}body-color);
+            }
+        }
+        .toc-list {
+            li {
+                a {
+                    &::before {
+                        background-color: var(--#{$prefix}body-color);
+                    }
+                }
+            }
+    }
+        }
+}
